@@ -90,7 +90,7 @@ class BankSystem:
                 account_number, account_holder, initial_balance
             )
             
-            print(f"\n✅ Account created successfully!")
+            print(f"\nAccount created successfully!")
             print(f"   Account Number: {account_number}")
             print(f"   Account Holder: {account_holder}")
             print(f"   Initial Balance: ${initial_balance:.2f}")
@@ -113,7 +113,7 @@ class BankSystem:
             try:
                 amount = float(amount_str)
                 result = self.accounts[account_number].deposit(amount)
-                print(f"\n✅ {result}")
+                print(f"\n{result}")
                 print(f"   New balance: ${self.accounts[account_number].get_balance():.2f}")
             except ValueError as e:
                 print(f"Error: {e}")
@@ -138,7 +138,7 @@ class BankSystem:
             try:
                 amount = float(amount_str)
                 result = self.accounts[account_number].withdraw(amount)
-                print(f"\n✅ {result}")
+                print(f"\n{result}")
                 print(f"   New balance: ${self.accounts[account_number].get_balance():.2f}")
             except ValueError as e:
                 print(f"Error: {e}")
@@ -151,7 +151,6 @@ class BankSystem:
             print(f"Unexpected error: {e}")
     
     def check_balance(self):
-        """Check account balance."""
         print("\n" + "="*40)
         print("CHECK BALANCE")
         print("="*40)
@@ -171,7 +170,6 @@ class BankSystem:
             print(f"Unexpected error: {e}")
     
     def view_transactions(self):
-        """View transaction history."""
         print("\n" + "="*40)
         print("VIEW TRANSACTIONS")
         print("="*40)
@@ -189,7 +187,6 @@ class BankSystem:
             print(f"Unexpected error: {e}")
     
     def list_all_accounts(self):
-        """List all accounts in the system."""
         print("\n" + "="*40)
         print("ALL ACCOUNTS")
         print("="*40)
@@ -204,7 +201,6 @@ class BankSystem:
             print(f"   Balance: ${account.get_balance():.2f}")
     
     def run(self):
-        """Run the main bank system menu."""
         print("\n" + "="*50)
         print("BANK ACCOUNT MANAGEMENT SYSTEM")
         print("="*50)
@@ -254,7 +250,6 @@ class BankSystem:
 
 
 def main():
-    """Main function to run the bank system."""
     try:
         bank_system = BankSystem()
         bank_system.run()
